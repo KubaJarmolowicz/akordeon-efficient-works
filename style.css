@@ -1,0 +1,66 @@
+h1,
+h2 {
+  font-family: Lato;
+}
+
+body {
+  display: block;
+  overflow-y: scroll;
+}
+.interactiveHeader {
+  display: inline-block;
+  position: relative;
+}
+
+.showContentBtn {
+  cursor: pointer;
+}
+
+.interactiveHeader::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: #6574cd;
+  width: 100%;
+  height: 1px;
+  transform-origin: center;
+  transform: scaleX(0);
+  transition: transform 0.2s ease-in-out;
+}
+
+.interactiveHeader:hover {
+  cursor: pointer;
+}
+.interactiveHeader:hover.interactiveHeader::after {
+  transform: scaleX(1);
+}
+
+.accordionItem.active .interactiveHeader::after {
+  transition: none;
+}
+
+.accordionItem {
+  transition: transform 0.3s ease-in;
+}
+
+.accordionItem.active .accordionContentWrapper {
+  border-color: #6574cd;
+  background-color: #fafcfc;
+}
+
+.accordionItem.active .showContentBtn {
+  border-color: #6574cd;
+  background-color: #6574cd;
+}
+
+.contentDiv {
+  height: 10px;
+  border-color: #6574cd;
+  background-color: #fafcfc;
+  transition: transform 0.3s ease-in;
+}
+
+.accordionItemContent {
+  transition: opacity 0.3s ease-in;
+}
